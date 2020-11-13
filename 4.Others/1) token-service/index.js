@@ -22,7 +22,7 @@ class TokenService {
     }
     getToken() {
         console.log(this.token);
-        return this.token();
+        return this.token;
     }
     removeToken() {
         this.token = null;
