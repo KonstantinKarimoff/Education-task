@@ -7,7 +7,7 @@
   getToken() - возващяет токен
  */
 
-class TokenService {
+ class TokenService {
     constructor() {
         this.token = null;
         this.subs = [];
@@ -15,13 +15,12 @@ class TokenService {
     subscribe(callback) {
         this.subs.push(callback);
     }
-    setToken() {
-        this.token = newToken;
-        console.log(newToken);
-        this.subs.forEach((sub) => sub(this.token));
+    setToken(token) {
+        this.token = token;
+        this.subs.forEach(function (key) {key(token);});
+        return this
     }
     getToken() {
-        console.log(this.token);
         return this.token;
     }
     removeToken() {
@@ -29,7 +28,6 @@ class TokenService {
         this.subs.forEach((sub) => sub(this.token));
     }
 }
+ window.TokenService = TokenService;
 
-window.TokenService = TokenService;
-
-export default TokenService;
+ export default TokenService;
