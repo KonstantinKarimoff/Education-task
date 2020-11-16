@@ -1,13 +1,10 @@
   function queryToObject(query) {
-
   if (query === "" || query === "?" ){
       return {};
   }
-
   const str = "{ " + query.replace(/\?/i, " \"").replace(/\=/g, "\" \: \"").replace(/\&/g, "\", \"") + "\"  " + " }";
   console.log(str);
   const obj = JSON.parse(str);
-
   for (let key in obj) {
       let isNum = !(isNaN(obj[key]));
       if (isNum) {
@@ -26,9 +23,6 @@
       }
   }
   return obj;
-
-
-
 };
 
 window.queryToObject = queryToObject;
