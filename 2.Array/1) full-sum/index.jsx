@@ -7,9 +7,6 @@ import React from 'react';
  * Если аргументов не будет, пусть вернется 0
  * @param args
  */
-const a = 9;
-
-
 function fullSum(...args) {
     for (let i = 0; i < args.length; i++) {
         if (typeof args[i] !== 'number') throw new Error("Wrong Argument Type");
@@ -24,10 +21,6 @@ function fullSum(...args) {
         return sum + current;
     }, 0);
     return result;
-
-
-
-  console.log('LOOOOG', args, a);
 }
 
 window.fullSum = fullSum;
